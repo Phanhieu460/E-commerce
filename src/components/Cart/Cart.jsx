@@ -8,9 +8,9 @@ const Cart = ({ cart, onUpdateCart, onRemoveCart, onEmptyCart }) => {
 
   const EmptyCart = () => (
     <Typography variant="subtitle1">
-      You have no items in your shopping cart,{" "}
+      Hiện không có sản phẩm nào trong giỏ hàng,{" "}
       <Link to="/" className={classes.link}>
-        start adding some!
+        Bắt đầu mua sắm ngay!
       </Link>
     </Typography>
   );
@@ -31,7 +31,7 @@ const Cart = ({ cart, onUpdateCart, onRemoveCart, onEmptyCart }) => {
       </Grid>
       <div className={classes.cardDetails}>
         <Typography variant="h4">
-          Subtotal: {cart.subtotal.formatted_with_symbol}
+          Tổng Thanh Toán: {cart.subtotal.formatted_with_symbol}
         </Typography>
         <Button
           className={classes.emptyButton}
@@ -49,8 +49,10 @@ const Cart = ({ cart, onUpdateCart, onRemoveCart, onEmptyCart }) => {
           type="button"
           variant="contained"
           color="primary"
+          component={Link}
+          to="/checkout"
         >
-          Checkout
+          Thanh Toán
         </Button>
       </div>
     </>
@@ -60,7 +62,7 @@ const Cart = ({ cart, onUpdateCart, onRemoveCart, onEmptyCart }) => {
     <Container>
       <div className={classes.toolBar}>
         <Typography className={classes.title} variant="h3">
-          Shopping Cart
+          Giỏ Hàng
         </Typography>
         {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
       </div>

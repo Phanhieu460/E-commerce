@@ -49,7 +49,7 @@ const CartItem = ({ item, onRemoveCart, onUpdateCart }) => {
           color="secondary"
           onClick={() => onRemoveCart(item.id)}
         >
-          REMOVE
+          Xóa
         </Button>
       </CardActions>
     </Card>
